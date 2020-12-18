@@ -1,1 +1,117 @@
-<p>experience works!</p>
+<!-- Just an image -->
+<nav class="navbar navbar-dark bg-dark">
+	<a class="navbar-brand" routerLink="/">
+		<img src="/assets/img/logo-white.svg" alt="">
+	</a>
+</nav>
+
+<div class="container">
+	<div class="card">
+		<div class="card-header">
+			<h5 class="card-title float-left">Work Experience</h5>
+			<h6 class="card-subtitle float-right" *ngIf="this.name else noName">{{ this.name }}</h6>
+
+			<ng-template #noName>
+				<h6 class="card-subtitle float-right no-data-message">Name Couldn't be fetched</h6>
+			</ng-template>
+		</div>
+		<div class="card-body">
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Company</th>
+						<th scope="col">Title</th>
+						<th scope="col">Location</th>
+						<th scope="col" class="duration">Month/Year - Month/Year</th>
+						<th scope="col" class="description">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<ng-container *ngIf="jobs?.length else noJobs">
+						<tr *ngFor="let job of jobs">
+							<td>{{ job.company_name }}</td>
+							<td>{{ job.title }}</td>
+							<td>{{ job.location }}</td>
+							<td>{{ job.start_date }}</td>
+							<td>{{ job.description }}</td>
+						</tr>
+					</ng-container>
+					<ng-template #noJobs>
+						<tr>
+							<td colspan="5">
+								<p class="small text-muted no-data-message">
+									No Jobs to Display!
+									<br>
+									Add jobs to your work history to display here.
+								</p>
+							</td>
+						</tr>
+					</ng-template>
+				</tbody>
+			</table>
+
+
+			<div class="row">
+				<div class="col">
+					<button *ngIf="!addWorkFormVisibility" (click)="showAddWorkForm()" type="button"
+						class="btn btn-outline-success btn-add align-self-start mr-2">
+						<img src="/assets/img/plus-icon.svg" class="plus-icon">
+						Add
+					</button>
+
+					<button *ngIf="addWorkFormVisibility" (click)="hideAddWorkForm()" type="submit"
+						class="btn btn-outline-danger align-self-end">Cancel
+					</button>
+
+					<div (click)="logout()" class="float-right">
+						<button class="btn btn-outline-danger">
+							Logout
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<form class="mt-4" *ngIf="addWorkFormVisibility" #jobForm="ngForm" (submit)="addJob(jobForm)">
+				<h4 class="add-work-title">Add new job to your work history</h4>
+				<div class="form-row d-flex-wrap mt-3">
+					<div class="col-3">
+						<input type="text" [(ngModel)]="company" name="company" class="form-control"
+							placeholder="Company">
+					</div>
+					<div class="col-3">
+						<input type="text" [(ngModel)]="jobTitle" name="jobTitle" class="form-control"
+							placeholder="Title">
+					</div>
+					<div class="col-3">
+						<input type="text" [(ngModel)]="location" name="location" class="form-control"
+							placeholder="Location">
+					</div>
+					<div class="col-3">
+						<input type="text" [(ngModel)]="date" name="date" class="form-control"
+							placeholder="Date (MM/YY - MM/YY)">
+					</div>
+				</div>
+
+				<div class="form-row d-flex-wrap mt-3">
+					<div class="col-9">
+						<textarea [(ngModel)]="description" name="description" class="form-control"
+							placeholder="Description" rows="1"></textarea>
+					</div>
+					<div class="col-3 d-flex">
+						<button type="submit" class="btn btn-outline-success align-self-end">Add Work</button>
+					</div>
+				</div>
+
+				<div class="alert alert-danger error" *ngIf="error && error?.message">
+					<p class="error-message">{{ error.message }}</p>
+				</div>
+
+
+			</form>
+
+
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,32 @@
+.card {
+  width: 945px;
+  min-height: 520px;
+  border: none;
+
+  &-title {
+	  width: 252px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.67em;
+    letter-spacing: 5px;
+    text-align: center;
+    color: #343534;
+    margin-bottom: 50px;
+  }
+
+  &-subtitle {
+    color: #286aa6;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  &-body {
+    padding: 50px 70px;
+    width: 390px;
+  }
+
+  .form-info {
+	margin-top: 122px;
+  }
+
+}

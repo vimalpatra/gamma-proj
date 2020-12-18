@@ -1,1 +1,63 @@
-<p>signup works!</p>
+<!-- Just an image -->
+<nav class="navbar navbar-dark">
+	<a class="navbar-brand" routerLink="/">
+		<img src="/assets/img/logo.svg" alt="">
+	</a>
+</nav>
+
+<div class="container">
+	<div class="card">
+		<div class="card-body">
+			<h1 class="card-title">
+				SIGN UP &
+				<br>
+				GET STARTED
+			</h1>
+			<form #f="ngForm" (submit)="signup(f, $event)">
+				<div class="form-group">
+					<label for="inputEmail1">Email</label>
+					<input #emailInput="ngModel" [(ngModel)]="email" name="email" value="raj@gammanet.co" type="email"
+						class="form-control" id="inputEmail1" aria-describedby="emailHelp" required email>
+
+					<div class="alert alert-danger form-help" *ngIf="(!emailInput.valid && emailInput.dirty) || ((!f.valid && !emailInput.valid) && submitClicked)">
+						<p class="form-help-message small">Enter a valid email!</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputName">Name</label>
+					<input #nameInput="ngModel" [(ngModel)]="name" name="name" type="text" class="form-control" id="inputName" required minlength="2">
+
+					<div class="alert alert-danger form-help" *ngIf="(!nameInput.valid && nameInput.dirty) || ((!f.valid && !nameInput.valid) && submitClicked)">
+						<p class="form-help-message small">Enter a valid name of atleast 2 characters</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword">Password</label>
+					<input #passInput="ngModel" [(ngModel)]="password" name="password" type="password" class="form-control" id="inputPassword" required minlength="6">
+
+					<div class="alert alert-danger form-help" *ngIf="(!passInput.valid && passInput.dirty) || ((!f.valid && !passInput.valid) && submitClicked)">
+						<p class="form-help-message small">Enter a password of atleast 6 characters</p>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-outline-success align-self-start">
+					Sign Up
+				</button>
+
+			</form>
+
+			<div class="alert alert-danger error" *ngIf="error && error?.message">
+				<p class="error-message">{{ error.message }}</p>
+			</div>
+
+			<p class="form-info">
+				<span>Already have an account?</span>
+				<a [routerLink]="['/login']">SIGN IN</a>
+			</p>
+
+		</div>
+
+		<!-- jpg -->
+		<img class="bg-image" src="assets/img/asset-2-3-x.jpg" srcset="assets/img/asset-2-3-x@2x.jpg 2x,
+		img/asset-2-3-x@3x.jpg 3x">
+	</div>
+</div>

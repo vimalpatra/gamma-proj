@@ -1,1 +1,208 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+body {
+  background: #f9f9f9;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.navbar {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0;
+  background-color: transparent;
+
+  &-brand {
+    display: block;
+    height: 80px;
+    padding: 0;
+    margin: 30px auto 0;
+  }
+
+}
+
+.card {
+  width: 1140px;
+  margin: auto;
+  overflow: hidden;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 10px 20px 0 rgba(210, 210, 210, 0.5);
+
+  &-header,
+  &-body,
+  &-footer {
+    border: none;
+    padding: 0;
+  }
+}
+
+
+
+.card-body {
+  background: white;
+  position: relative;
+  z-index: 1;
+
+  form {
+    label {
+      font-size: 10px;
+      font-weight: 300;
+      color: #8c949c;
+      margin-bottom: 0;
+    }
+
+    .form-control {
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      line-height: 32px;
+      font-size: 12px;
+      color: #8c949c;
+      border-bottom: solid 1px #e6ecef;
+
+
+
+      &:focus {
+        box-shadow: none;
+        color: #286aa6;
+        border-bottom-color: #345a99;
+      }
+    }
+
+    textarea {
+      height: 64px;
+      resize: none;
+    }
+  }
+
+  .form-group:nth-last-child(2) {
+    margin-bottom: 0;
+  }
+
+  .error {
+    margin: 0;
+    margin-top: 15px;
+	padding: 10px;
+    display: inline-block;
+    background: transparent;
+    border-color: #d80d23;
+    border-radius: 0;
+    border-width: 2px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 10px 0 5px;
+
+    &-message {
+	  margin: 0;
+	  font-size: 12px;
+	  font-weight: 500;
+	  text-transform: capitalize;
+	  color: #d80d23;
+    }
+  }
+
+  .form-help {
+    margin: 8px 0 12px;
+    margin-top: 8px;
+    padding: 10px;
+    border-color: #d80d23;
+    border-radius: 0;
+    border-width: 2px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+	padding: 6px 15px 4px;
+	
+	&-message{
+		margin: 0;
+		font-size: 10px;
+		font-weight: 500;
+		text-transform: capitalize;
+		color: #d80d23;
+	}
+  }
+
+  .form-info {
+    margin: 0;
+    margin-top: 54px;
+    font-size: 12px;
+    font-weight: 300;
+    color: #8c949c;
+
+    a {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #23c994;
+    }
+
+  }
+
+  .btn {
+    margin-top: 20px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 23px 0;
+
+    border-radius: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+
+
+    &-outline-success {
+      border: 1px solid #23c994;
+      color: #23c994;
+
+      &:focus {
+        box-shadow: 0 0 5px 0.1rem rgba(40, 167, 69, .35);
+      }
+    }
+
+
+    &:hover {
+      color: white;
+    }
+
+    &:active {
+      background: transparent;
+    }
+
+    .plus-icon {
+      margin-right: 2px;
+    }
+
+  }
+}
+
+img.bg-image {
+  position: absolute;
+  //   left: 263px;
+  //   top: 48px;
+  //   bottom: 48px;
+  right: -3%;
+  width: 59%;
+  top: 70px;
+}
+
+
+.no-data-message {
+	animation: fadeInAfterDelay 1 .3s .7s both;
+}
+
+@keyframes fadeInAfterDelay {
+	0% {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	100% {
+		visibility: visible;
+		opacity: 1;
+	}
+}
