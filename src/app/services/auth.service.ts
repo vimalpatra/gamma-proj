@@ -29,22 +29,14 @@ export class AuthService {
 	signup(userData) {
 		const url = `${this.baseUrl}/sign_up`;
 
-		return this.http.post(url, userData).pipe(
-			map(res => {
-				console.log(res);
-				// return this.extractData(res, this.http);
-			})
-		);
+		return this.http.post(url, userData).pipe( map(res => res) );
 	}
 
 	login(userData) {
 		const url = `${this.baseUrl}/login`;
 
 		return this.http.post(url, userData).pipe(
-			map((res: any) => {
-				console.log(res);
-				this.user_email = res.email_id;
-			})
+			map((res: any) => this.user_email = res.email_id )
 		);
 	}
 

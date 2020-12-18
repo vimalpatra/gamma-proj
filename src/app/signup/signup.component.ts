@@ -19,7 +19,6 @@ export class SignupComponent implements OnInit {
 	}
 
 	signup(form, e: Event) {
-		//   e.preventDefault();
 		this.submitClicked = true;
 		const fields = form.value;
 
