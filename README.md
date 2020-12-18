@@ -1,6 +1,17 @@
 # Gamma
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21 as an interview assignment for Gamma Networks
+
+## UI Additions
+
+A few things have been added to the UI for better navigation yet keeping the project small and fairly simple, such as:
+
+1. Form Validations for sign up and login.
+2. Server error response added to user interface.
+3. Add Job experience form added to the Work experience dashboard
+4. A simple logout functionality with a button added saving the user to the localStorage
+4. Minor UI messages to user for scenarios where data isn't received.
+
 
 ## Development server
 
