@@ -54,14 +54,23 @@
   }
 
   .btn-add {
-    padding: 0 16px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px 16px;
+	height: 30px;
     text-transform: uppercase;
-    font-size: 14px;
-
+	font-size: 14px;
 
     .plus-icon {
-      margin-right: 2px;
-    }
+      margin-right: 10px;
+	}
+	
+	.text,
+	.plus-icon {
+		line-height: 1em;
+	}
+	
 
   }
 

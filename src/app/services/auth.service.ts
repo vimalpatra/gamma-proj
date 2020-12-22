@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { ConstantsService } from '../config/constants.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AuthService {
-	private baseUrl = 'http://34.121.49.132/';
 
 	private _email;
 	private get user_email() {
@@ -18,7 +18,7 @@ export class AuthService {
 		this._email = e;
 	}
 
-	constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient, private constants: ConstantsService) { }
 
 	isAuthenticated() {
 		return new Promise(
@@ -27,13 +27,13 @@ export class AuthService {
 	}
 
 	signup(userData) {
-		const url = `${this.baseUrl}/sign_up`;
+		const url = `${this.constants.baseUrl}/sign_up`;
 
 		return this.http.post(url, userData).pipe( map(res => res) );
 	}
 
 	login(userData) {
-		const url = `${this.baseUrl}/login`;
+		const url = `${this.constants.baseUrl}/login`;
 
 		return this.http.post(url, userData).pipe(
 			map((res: any) => this.user_email = res.email_id )
