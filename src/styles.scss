@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 
+* {
+	box-sizing: border-box;
+}
+
 body {
   background: #f9f9f9;
   font-family: "Roboto", sans-serif;
@@ -24,6 +28,7 @@ body {
 
 .card {
   width: 1140px;
+  min-height: 520px;
   margin: auto;
   overflow: hidden;
   background: white;
@@ -182,12 +187,12 @@ body {
 
 img.bg-image {
   position: absolute;
-  //   left: 263px;
-  //   top: 48px;
-  //   bottom: 48px;
-  right: -3%;
-  width: 59%;
-  top: 70px;
+    left: 263px;
+    top: 48px;
+    bottom: 48px;
+//   right: -3%;
+//   width: 59%;
+//   top: 70px;
 }
 
 

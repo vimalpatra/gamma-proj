@@ -1,7 +1,7 @@
 
 .card {
   width: 945px;
-  min-height: 520px;
+  
   border: none;
 
   &-title {
@@ -21,7 +21,7 @@
   }
 
   &-body {
-    padding: 50px 70px;
+    padding: 50px 70px 30px;
     width: 390px;
   }
 

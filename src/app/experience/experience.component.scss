@@ -105,9 +105,13 @@
       padding: 21px 20px;
       font-size: 14px;
       color: #4c4c4c;
-
-
     }
+  }
+
+  th,
+  td {
+	  width: 100px;
+	  overflow-wrap: anywhere;
   }
 }
 
